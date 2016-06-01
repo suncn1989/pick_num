@@ -26,6 +26,7 @@ namespace pick_num
         {
             InitializeComponent();
             webBrowser1.Navigate("http://518ek.com");
+            //webBrowser1.Navigate("http://www.baidu.com");
             webBrowser1.LoadCompleted += new LoadCompletedEventHandler(webBrowser1_LoadCompleted);
 
             /*
@@ -48,11 +49,17 @@ namespace pick_num
 
             mshtml.IHTMLElement element_usrname = (mshtml.IHTMLElement)inputs.item("username", 0);
             mshtml.IHTMLInputElement inputElement_username = (mshtml.IHTMLInputElement)element_usrname;
-            inputElement_username.value = "301aaa";
+            if (inputElement_username != null)
+            {
+                inputElement_username.value = "301aaa";
+            }
 
             mshtml.IHTMLElement element_pwd = (mshtml.IHTMLElement)inputs.item("pwd", 0);
             mshtml.IHTMLInputElement inputElement_pwd = (mshtml.IHTMLInputElement)element_pwd;
-            inputElement_pwd.value = "qwe123123";
+            if (inputElement_pwd != null)
+            {
+                inputElement_pwd.value = "qwe123123";
+            }
 
             //dom.all.item("password", 222);
             //IHTMLDocument2 tbUserid = (IHTMLDocument2)webBrowser1.Document.;
